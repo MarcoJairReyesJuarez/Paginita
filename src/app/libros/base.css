@@ -1,0 +1,114 @@
+/* aqui solo es el diseño de el catalogo de libros */
+
+#lista2 {
+    counter-reset: li;
+    list-style: none;
+    *list-style: decimal;
+    font: 15px "trebuchet MS", "lucida sans";
+    padding: 0;
+    margin-bottom: 4em;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.644);
+    display: flex;
+  }
+  
+  #lista2 ol {
+    margin: 0 0 0 2em;
+  }
+  
+  #lista2 li {
+    position: relative;
+    display: block;
+    padding: 0.3em 0.2em 0.2em 2em;
+    *padding: 0.2em;
+    margin: 0.5em 0;
+    background:none;
+    color: #444;
+    text-decoration: none;
+    border-radius: 0.3em;
+    transition: all 0.3s ease-out;
+  }
+  
+  #lista2 li:hover {
+    background: rgb(245, 237, 237);
+  }
+  
+  #lista2 li:hover:before {
+    transform: rotate(360deg);
+  }
+  
+  #lista2 li:before {
+    content: counter(li);
+    counter-increment: li;
+    position: absolute;
+    left: -1.3em;
+    top: 50%;
+    margin-top: -1.3em;
+    background: #87ceeb;
+    height: 2em;
+    width: 2em;
+    line-height: 2em;
+    border: 0.3em solid #fff;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 2em;
+    transition: all 0.3s ease-out;
+  }
+  .parrafo {
+    align-content: left;
+    color: blue;
+    display: flex;
+  }
+  img{
+    width: 200px;
+    height: 250px;
+    
+   
+  }
+  .colum1 {
+    max-width: 400px;
+  }
+  
+  .flip-box {
+    background-color: transparent;
+    width: 200px;
+    height: 250px;
+    
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  }
+  
+  /* This container is needed to position the front and back side */
+  .flip-box-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+  /* Do an horizontal flip when you move the mouse over the flip box container */
+  .flip-box:hover .flip-box-inner {
+    transform: rotateY(180deg);
+  }
+  
+  /* Position the front and back side */
+  .flip-box-front, .flip-box-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+  }
+  
+  /* Style the front side (fallback if image is missing) */
+  .flip-box-front {
+    
+    color: black;
+  }
+  
+  /* Style the back side */
+  .flip-box-back {
+    background-color: rgb(1, 2, 8);
+    color: white;
+    transform: rotateY(180deg);
+  }
